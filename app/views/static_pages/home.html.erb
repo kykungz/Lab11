@@ -1,6 +1,8 @@
-<h1>Sample App</h1>
+<div class="center jumbotron">
 
-<p>
+<h1>Welcome to the Sample App</h1>
+
+<h2>
 
 This is the home page for the
 
@@ -8,24 +10,12 @@ This is the home page for the
 
 sample application.
 
-</p>
+</h2>
 
-Custom HTML for the Help page app/views/static_pages/help.html.erb
+<%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
 
+</div>
 
+<%= link_to image_tag("rails.png", alt: "Rails logo"),
 
-<h1>Help</h1>
-
-<p>
-
-Get help on the Ruby on Rails Tutorial at the
-
-<a href="http://www.railstutorial.org/help">Rails Tutorial help page</a>.
-
-To get help on this sample app, see the
-
-<a href="http://www.railstutorial.org/book"><em>Ruby on Rails Tutorial</em>
-
-book</a>.
-
-</p>
+'http://rubyonrails.org/' %>

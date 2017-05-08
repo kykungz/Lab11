@@ -1,0 +1,44 @@
+<% provide(:title, "Login") %>
+
+<div class="jumbotron">
+    <div id="warning" class="alert alert-danger hidden" role="alert">Invalid email/password combination</div>
+
+    <h1>Log in</h1>
+
+    <div class="center-block" style="max-width: 600px;">
+    
+        <div class="input-group center-block">
+            <span>Email</span>
+            <input id="email" type="text" class="form-control" placeholder="Email address" >
+        </div>
+    
+        <div class="input-group center-block" style="padding-top: 60px;">
+            <span>Password</span>
+            <input type="password" class="form-control" placeholder="Password">
+
+        </div>
+         
+        <button style="margin-top:30px;" type="button" onclick="login_check();" class="btn btn-primary">Log in</button>
+
+        <p style="padding-top: 30px;">New user?
+            <%= link_to "Sign up now!", '#' %>
+        </p>
+
+
+    </div>
+
+</div>
+<script>
+    function login_check() {
+        var email = document.getElementById("email").value;
+        var emailPattern = /\w+@\w+.\w+/g;
+         var warning = document.getElementById("warning");
+         if (!email.match(emailPattern) ){
+            if (warning.classList.contains("hidden")) {
+                warning.classList.remove("hidden");
+            }
+        }else {
+            document.location = "/";
+        }
+    }
+</script>
